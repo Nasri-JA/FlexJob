@@ -2,8 +2,8 @@ package com.flexjob.user.infrastructure.adapter.in.rest.dto;
 
 import lombok.Data;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 /**
  * LoginRequest - REST-DTO für Login-Request

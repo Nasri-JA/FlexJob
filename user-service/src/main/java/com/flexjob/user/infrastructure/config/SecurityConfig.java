@@ -62,7 +62,6 @@ import java.util.Arrays;
  */
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true) // Aktiviert @PreAuthorize
 @RequiredArgsConstructor
 public class SecurityConfig {
 
@@ -86,7 +85,7 @@ public class SecurityConfig {
                 // ==========================================
                 // Cross-Origin Resource Sharing
                 // Erlaubt Frontend von anderem Domain auf API zuzugreifen
-                .cors().and()
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
 
                 // ==========================================
                 // CSRF deaktivieren
@@ -94,24 +93,24 @@ public class SecurityConfig {
                 // Cross-Site Request Forgery Schutz
                 // Nicht nötig für stateless JWT-API
                 // CSRF-Token nur für Session-basierte Auth nötig
-                .csrf().disable()
+                .csrf(csrf -> csrf.disable())
 
                 // ==========================================
                 // Authorization-Regeln
                 // ==========================================
-                .authorizeRequests()
-                    // Öffentliche Endpoints (kein Login nötig)
-                    .antMatchers("/api/v1/auth/**").permitAll() // Register, Login
-                    .antMatchers("/actuator/**").permitAll()    // Health-Checks
-                    .antMatchers("/swagger-ui/**").permitAll()  // API-Docs
-                    .antMatchers("/v3/api-docs/**").permitAll() // OpenAPI
+                .authorizeHttpRequests(auth -> auth
+                        // Öffentliche Endpoints (kein Login nötig)
+                        .requestMatchers("/api/v1/auth/**").permitAll() // Register, Login
+                        .requestMatchers("/actuator/**").permitAll()    // Health-Checks
+                        .requestMatchers("/swagger-ui/**").permitAll()  // API-Docs
+                        .requestMatchers("/v3/api-docs/**").permitAll() // OpenAPI
 
-                    // Admin-Endpoints (nur für ADMIN-Rolle)
-                    .antMatchers("/api/v1/admin/**").hasRole("ADMIN")
+                        // Admin-Endpoints (nur für ADMIN-Rolle)
+                        .requestMatchers("/api/v1/admin/**").hasRole("ADMIN")
 
-                    // Alle anderen Endpoints erfordern Authentifizierung
-                    .anyRequest().authenticated()
-                .and()
+                        // Alle anderen Endpoints erfordern Authentifizierung
+                        .anyRequest().authenticated()
+                )
 
                 // ==========================================
                 // Session-Management: STATELESS
@@ -119,9 +118,9 @@ public class SecurityConfig {
                 // Keine Server-Side Sessions
                 // Jeder Request muss JWT-Token mitbringen
                 // Horizontal skalierbar (kein Session-Store nötig)
-                .sessionManagement()
-                    .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
+                .sessionManagement(session -> session
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                )
 
                 // ==========================================
                 // JWT-Filter hinzufügen

@@ -13,7 +13,7 @@
 
     <artifactId>user-service</artifactId>
 
-    <name>User Service (Clean Architecture)</name>
+    <name>User Service</name>
     <description>User Service mit moderner Hexagonal/Clean Architecture (2025)</description>
 
     <dependencies>
@@ -90,6 +90,18 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- Liquibase -->
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+        </dependency>
+
+        <!-- springdoc OpenAPI -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
         </dependency>
     </dependencies>
 
