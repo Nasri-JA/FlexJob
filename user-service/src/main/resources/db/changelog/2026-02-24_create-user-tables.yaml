@@ -1,0 +1,126 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: flexjob
+      changes:
+        - createTable:
+            tableName: user_profiles
+            columns:
+              - column:
+                  name: id
+                  type: varchar(36)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(100)
+              - column:
+                  name: last_name
+                  type: varchar(100)
+              - column:
+                  name: phone_number
+                  type: varchar(20)
+              - column:
+                  name: date_of_birth
+                  type: date
+              - column:
+                  name: address
+                  type: varchar(255)
+              - column:
+                  name: city
+                  type: varchar(100)
+              - column:
+                  name: postal_code
+                  type: varchar(20)
+              - column:
+                  name: country
+                  type: varchar(100)
+              - column:
+                  name: profile_image_url
+                  type: varchar(500)
+              - column:
+                  name: bio
+                  type: text
+              - column:
+                  name: linkedin_url
+                  type: varchar(255)
+              - column:
+                  name: github_url
+                  type: varchar(255)
+              - column:
+                  name: website_url
+                  type: varchar(255)
+
+  - changeSet:
+      id: 2
+      author: flexjob
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: varchar(36)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password_hash
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_type
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: active
+                  type: boolean
+                  constraints:
+                    nullable: false
+                  defaultValueBoolean: true
+              - column:
+                  name: email_verified
+                  type: boolean
+                  constraints:
+                    nullable: false
+                  defaultValueBoolean: false
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: profile_id
+                  type: varchar(36)
+                  constraints:
+                    foreignKeyName: fk_users_profile
+                    references: user_profiles(id)
+              - column:
+                  name: version
+                  type: bigint
+        - createIndex:
+            indexName: idx_user_email
+            tableName: users
+            columns:
+              - column:
+                  name: email
+        - createIndex:
+            indexName: idx_user_type
+            tableName: users
+            columns:
+              - column:
+                  name: user_type
