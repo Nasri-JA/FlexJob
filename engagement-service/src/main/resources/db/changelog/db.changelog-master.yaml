@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/2026-02-24_create-application-tables.yaml
+  - include:
+      file: db/changelog/2026-02-24_create-booking-tables.yaml
+  - include:
+      file: db/changelog/2026-02-24_create-review-tables.yaml

@@ -6,15 +6,12 @@ COPY mvnw .
 COPY pom.xml .
 COPY common/pom.xml common/pom.xml
 COPY discovery-service/pom.xml discovery-service/pom.xml
-COPY config-service/pom.xml config-service/pom.xml
 COPY api-gateway/pom.xml api-gateway/pom.xml
 COPY user-service/pom.xml user-service/pom.xml
 COPY job-service/pom.xml job-service/pom.xml
-COPY application-service/pom.xml application-service/pom.xml
-COPY booking-service/pom.xml booking-service/pom.xml
+COPY engagement-service/pom.xml engagement-service/pom.xml
 COPY payment-service/pom.xml payment-service/pom.xml
 COPY notification-service/pom.xml notification-service/pom.xml
-COPY review-service/pom.xml review-service/pom.xml
 COPY common/src common/src
 COPY payment-service/src payment-service/src
 RUN ./mvnw clean package -pl payment-service -am -DskipTests

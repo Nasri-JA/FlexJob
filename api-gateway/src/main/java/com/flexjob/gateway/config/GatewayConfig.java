@@ -21,15 +21,10 @@ public class GatewayConfig {
                         .path("/api/jobs/**", "/api/categories/**")
                         .uri("lb://job-service"))
 
-                // Application Service Routes
-                .route("application-service", r -> r
-                        .path("/api/applications/**")
-                        .uri("lb://application-service"))
-
-                // Booking Service Routes
-                .route("booking-service", r -> r
-                        .path("/api/bookings/**")
-                        .uri("lb://booking-service"))
+                // Engagement Service Routes (applications, bookings, reviews)
+                .route("engagement-service", r -> r
+                        .path("/api/applications/**", "/api/bookings/**", "/api/reviews/**")
+                        .uri("lb://engagement-service"))
 
                 // Payment Service Routes
                 .route("payment-service", r -> r
@@ -40,11 +35,6 @@ public class GatewayConfig {
                 .route("notification-service", r -> r
                         .path("/api/notifications/**")
                         .uri("lb://notification-service"))
-
-                // Review Service Routes
-                .route("review-service", r -> r
-                        .path("/api/reviews/**")
-                        .uri("lb://review-service"))
 
                 .build();
     }
