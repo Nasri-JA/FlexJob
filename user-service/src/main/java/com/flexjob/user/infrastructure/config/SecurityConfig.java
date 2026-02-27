@@ -1,6 +1,6 @@
 package com.flexjob.user.infrastructure.config;
 
-import com.flexjob.user.infrastructure.adapter.output.security.JwtTokenProvider;
+import com.flexjob.user.infrastructure.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

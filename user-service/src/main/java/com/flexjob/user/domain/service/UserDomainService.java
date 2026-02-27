@@ -1,12 +1,8 @@
 package com.flexjob.user.domain.service;
 
-import com.flexjob.user.domain.exception.UserNotFoundException;
 import com.flexjob.user.domain.model.User;
 import com.flexjob.user.domain.vo.Email;
-import com.flexjob.user.domain.vo.UserId;
-import org.springframework.stereotype.Service;
 
-@Service
 public class UserDomainService
 {
    public void validateRegistration( Email email, String password )
@@ -84,35 +80,5 @@ public class UserDomainService
             "User-Account ist deaktiviert: " + user.getId().getValue()
          );
       }
-   }
-
-   public User requireUserExists( User user, UserId userId )
-   {
-      if ( user == null )
-      {
-         throw new UserNotFoundException(
-            "User nicht gefunden: " + userId.getValue()
-         );
-      }
-      return user;
-   }
-
-   public void requireEmailVerified( User user )
-   {
-      if ( !user.isEmailVerified() )
-      {
-         throw new IllegalStateException(
-            "E-Mail muss verifiziert sein. Bitte prüfen Sie Ihren Posteingang."
-         );
-      }
-   }
-
-   public boolean isSameUser( User user1, User user2 )
-   {
-      if ( user1 == null || user2 == null )
-      {
-         return false;
-      }
-      return user1.getId().equals( user2.getId() );
    }
 }

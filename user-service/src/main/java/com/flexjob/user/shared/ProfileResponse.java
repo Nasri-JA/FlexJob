@@ -1,4 +1,4 @@
-package com.flexjob.user.domain.model;
+package com.flexjob.user.shared;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Getter
 @Builder
-public class UserProfile
+public class ProfileResponse
 {
    private String firstName;
    private String lastName;
@@ -22,21 +22,4 @@ public class UserProfile
    private String linkedInUrl;
    private String githubUrl;
    private String websiteUrl;
-
-   public String getFullName()
-   {
-      if ( firstName == null && lastName == null )
-      {
-         return "";
-      }
-      if ( firstName == null )
-      {
-         return lastName;
-      }
-      if ( lastName == null )
-      {
-         return firstName;
-      }
-      return firstName + " " + lastName;
-   }
 }
