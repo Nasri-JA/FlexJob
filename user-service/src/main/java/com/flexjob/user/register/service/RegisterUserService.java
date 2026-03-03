@@ -1,10 +1,12 @@
-package com.flexjob.user.register;
+package com.flexjob.user.register.service;
 
 import com.flexjob.common.events.UserRegisteredEvent;
-import com.flexjob.user.shared.EventPublisher;
-import com.flexjob.user.shared.UserRepository;
-import com.flexjob.user.shared.UserResponse;
-import com.flexjob.user.shared.UserResponseMapper;
+import com.flexjob.user.register.dto.RegisterUserCommand;
+import com.flexjob.user.register.usecase.RegisterUserUseCase;
+import com.flexjob.user.shared.repository.EventPublisher;
+import com.flexjob.user.shared.repository.UserRepository;
+import com.flexjob.user.shared.dto.UserResponse;
+import com.flexjob.user.shared.mapper.UserResponseMapper;
 import com.flexjob.user.domain.model.User;
 import com.flexjob.user.domain.model.UserProfile;
 import com.flexjob.user.domain.service.UserDomainService;

@@ -1,11 +1,8 @@
-package com.flexjob.user.infrastructure.rest;
+package com.flexjob.user.register.controller;
 
-import com.flexjob.user.login.LoginCommand;
-import com.flexjob.user.login.LoginResponse;
-import com.flexjob.user.login.LoginUserUseCase;
-import com.flexjob.user.register.RegisterUserCommand;
-import com.flexjob.user.register.RegisterUserUseCase;
-import com.flexjob.user.shared.UserResponse;
+import com.flexjob.user.register.dto.RegisterUserCommand;
+import com.flexjob.user.register.usecase.RegisterUserUseCase;
+import com.flexjob.user.shared.dto.UserResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -19,10 +16,9 @@ import jakarta.validation.Valid;
 @RequiredArgsConstructor
 @Slf4j
 @CrossOrigin( origins = "*" )
-public class AuthController
+public class RegisterController
 {
    private final RegisterUserUseCase registerUserUseCase;
-   private final LoginUserUseCase loginUserUseCase;
 
    @PostMapping( "/register" )
    public ResponseEntity<UserResponse> register(
@@ -36,18 +32,6 @@ public class AuthController
       return ResponseEntity
          .status( HttpStatus.CREATED )
          .body( response );
-   }
-
-   @PostMapping( "/login" )
-   public ResponseEntity<LoginResponse> login(
-      @Valid @RequestBody LoginCommand command
-   )
-   {
-      log.info( "Login request received for email: {}", command.getEmail() );
-
-      LoginResponse response = loginUserUseCase.login( command );
-
-      return ResponseEntity.ok( response );
    }
 
 }

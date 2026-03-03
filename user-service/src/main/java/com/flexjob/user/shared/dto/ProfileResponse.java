@@ -1,4 +1,4 @@
-package com.flexjob.user.shared;
+package com.flexjob.user.shared.dto;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.flexjob.user.shared;
+package com.flexjob.user.shared.repository;
 
 import com.flexjob.user.domain.model.User;
 

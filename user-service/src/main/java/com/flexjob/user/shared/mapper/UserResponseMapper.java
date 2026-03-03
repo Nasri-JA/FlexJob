@@ -1,7 +1,9 @@
-package com.flexjob.user.shared;
+package com.flexjob.user.shared.mapper;
 
 import com.flexjob.user.domain.model.User;
 import com.flexjob.user.domain.model.UserProfile;
+import com.flexjob.user.shared.dto.ProfileResponse;
+import com.flexjob.user.shared.dto.UserResponse;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,9 +1,11 @@
-package com.flexjob.user.infrastructure.persistence;
+package com.flexjob.user.infrastructure.persistence.mapper;
 
 import com.flexjob.user.domain.model.User;
 import com.flexjob.user.domain.model.UserProfile;
 import com.flexjob.user.domain.vo.Email;
 import com.flexjob.user.domain.vo.UserId;
+import com.flexjob.user.infrastructure.persistence.entity.UserJpaEntity;
+import com.flexjob.user.infrastructure.persistence.entity.UserProfileJpaEntity;
 import org.springframework.stereotype.Component;
 
 @Component

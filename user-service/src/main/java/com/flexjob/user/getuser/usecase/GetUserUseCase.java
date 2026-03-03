@@ -1,6 +1,6 @@
-package com.flexjob.user.getuser;
+package com.flexjob.user.getuser.usecase;
 
-import com.flexjob.user.shared.UserResponse;
+import com.flexjob.user.shared.dto.UserResponse;
 import com.flexjob.user.domain.vo.UserId;
 
 public interface GetUserUseCase

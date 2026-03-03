@@ -1,6 +1,6 @@
 package com.flexjob.user.infrastructure.messaging;
 
-import com.flexjob.user.shared.EventPublisher;
+import com.flexjob.user.shared.repository.EventPublisher;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

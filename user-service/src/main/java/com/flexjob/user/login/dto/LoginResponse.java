@@ -1,6 +1,6 @@
-package com.flexjob.user.login;
+package com.flexjob.user.login.dto;
 
-import com.flexjob.user.shared.UserResponse;
+import com.flexjob.user.shared.dto.UserResponse;
 import lombok.Builder;
 import lombok.Getter;
 

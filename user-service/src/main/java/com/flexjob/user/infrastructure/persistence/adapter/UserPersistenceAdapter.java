@@ -1,6 +1,9 @@
-package com.flexjob.user.infrastructure.persistence;
+package com.flexjob.user.infrastructure.persistence.adapter;
 
-import com.flexjob.user.shared.UserRepository;
+import com.flexjob.user.infrastructure.persistence.entity.UserJpaEntity;
+import com.flexjob.user.infrastructure.persistence.mapper.UserPersistenceMapper;
+import com.flexjob.user.infrastructure.persistence.repository.UserJpaRepository;
+import com.flexjob.user.shared.repository.UserRepository;
 import com.flexjob.user.domain.model.User;
 import com.flexjob.user.domain.vo.Email;
 import com.flexjob.user.domain.vo.UserId;

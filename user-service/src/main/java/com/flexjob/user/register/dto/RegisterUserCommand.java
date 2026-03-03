@@ -1,4 +1,4 @@
-package com.flexjob.user.register;
+package com.flexjob.user.register.dto;
 
 import com.flexjob.user.domain.model.UserType;
 import lombok.AllArgsConstructor;

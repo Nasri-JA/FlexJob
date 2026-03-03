@@ -1,6 +1,6 @@
 package com.flexjob.user.infrastructure.security;
 
-import com.flexjob.user.shared.TokenGenerator;
+import com.flexjob.user.shared.repository.TokenGenerator;
 import com.flexjob.user.domain.model.User;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

@@ -1,7 +1,7 @@
-package com.flexjob.user.infrastructure.rest;
+package com.flexjob.user.getuser.controller;
 
-import com.flexjob.user.getuser.GetUserUseCase;
-import com.flexjob.user.shared.UserResponse;
+import com.flexjob.user.getuser.usecase.GetUserUseCase;
+import com.flexjob.user.shared.dto.UserResponse;
 import com.flexjob.user.domain.vo.UserId;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @Slf4j
 @CrossOrigin( origins = "*" )
-public class UserController
+public class GetUserController
 {
    private final GetUserUseCase getUserUseCase;
 

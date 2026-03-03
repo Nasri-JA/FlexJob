@@ -1,4 +1,4 @@
-package com.flexjob.user.login;
+package com.flexjob.user.login.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

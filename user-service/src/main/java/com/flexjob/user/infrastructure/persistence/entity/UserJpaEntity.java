@@ -1,4 +1,4 @@
-package com.flexjob.user.infrastructure.persistence;
+package com.flexjob.user.infrastructure.persistence.entity;
 
 import com.flexjob.user.domain.model.UserType;
 import lombok.AllArgsConstructor;

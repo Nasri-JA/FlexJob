@@ -1,4 +1,4 @@
-package com.flexjob.user.shared;
+package com.flexjob.user.shared.dto;
 
 import com.flexjob.user.domain.model.UserType;
 import lombok.Builder;
