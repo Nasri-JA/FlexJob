@@ -4,7 +4,7 @@ import com.flexjob.job.domain.model.Job;
 import com.flexjob.job.domain.model.JobCategory;
 import com.flexjob.job.domain.model.JobRequirement;
 import com.flexjob.job.domain.vo.*;
-import com.flexjob.job.enums.JobStatus;
+import com.flexjob.job.domain.model.JobStatus;
 
 import java.time.LocalDateTime;
 import java.util.List;

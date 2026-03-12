@@ -1,7 +1,6 @@
 package com.flexjob.job.domain.model;
 
 import com.flexjob.job.domain.vo.*;
-import com.flexjob.job.enums.JobStatus;
 import lombok.Builder;
 import lombok.Getter;
 
